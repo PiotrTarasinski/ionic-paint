@@ -5,7 +5,7 @@
         <ion-icon slot="icon-only" name="trash"></ion-icon>
       </ion-button>
       <ion-button (click)="openBrushSettings()">
-        <ion-icon slot="icon-only" name="brush"></ion-icon>
+        <ion-icon slot="icon-only" name="brush" [ngStyle]="{'color': selectedColor}"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title>Paint</ion-title>
