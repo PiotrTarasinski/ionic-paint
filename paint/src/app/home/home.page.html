@@ -38,7 +38,13 @@
     </div>
     <div class="colors-container">
       <p class="label">Select Brush Color:</p>
-      
+      <div *ngFor="let color of colorPallete"
+      class="color"
+      [ngStyle]="{'background-color': color}"
+      (click)="changeBrushColor(color)"
+      [ngClass]="{'active': selectedColor === color}"
+      >
+    </div>
     </div>
   </ion-content>
 </div>

@@ -18,13 +18,14 @@ export class HomePage implements OnInit {
   saveY: number;
 
   // color section
-  selectedColor = '#9e2956';
   colorPallete = [
-    '#ffffff', '#000000', '#ffe119', '#4363d8',
+    '#000000', '#ffffff', '#ffe119', '#4363d8',
     '#f58231', '#911eb4', '#46f0f0', '#f032e6',
     '#bcf60c', '#fabebe', '#008080', '#e6beff',
     '#9a6324', '#fffac8', '#800000', '#aaffc3',
-    '#808000', '#ffd8b1', '#000075', '#808080'];
+    '#808000', '#ffd8b1', '#000075', '#808080'
+  ];
+    selectedColor = this.colorPallete[0];
   // brush section
   brushThickness = 5;
 
@@ -129,6 +130,10 @@ export class HomePage implements OnInit {
 
   changeBrushThickness(event) {
     this.brushThickness = event.detail.value;
+  }
+
+  changeBrushColor(color) {
+    this.selectedColor = color;
   }
 
 }
