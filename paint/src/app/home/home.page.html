@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="primary">
+      <ion-button *ngIf="!isCanvasBlank" (click)="clearCanvas()">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+      <ion-button (click)="openBrushSettings()">
+        <ion-icon slot="icon-only" name="brush"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Paint</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <canvas #imageCanvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)" (touchend)="stopDrawing($event)"></canvas>
+</ion-content>
+
+<div *ngIf="isBrushSettingsOpened" class="brushSettings">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="primary">
+        <ion-button (click)="closeBrushSettings()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Brush Settings</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div class="range-container">
+      <p class="label">Select Brush Thickness:</p>
+      <ion-range min="1" max="10" step="1" pin="true" snaps="true" value="{{brushThickness}}" (ionChange)="changeBrushThickness($event)">
+        <ion-icon size="small" slot="start" name="brush"></ion-icon>
+        <ion-icon slot="end" name="brush"></ion-icon>
+      </ion-range>
+    </div>
+    <div class="colors-container">
+      <p class="label">Select Brush Color:</p>
+      
+    </div>
+  </ion-content>
+</div>

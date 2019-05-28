@@ -1,0 +1,21 @@
+canvas {
+  display: block;
+}
+
+.brushSettings {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.label {
+  text-align: center;
+  margin-bottom: 0px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.colors-container {
+  padding: 8px;
+}
